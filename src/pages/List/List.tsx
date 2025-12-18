@@ -7,7 +7,9 @@ function List() {
   return (
     <> 
       <h1>List</h1>
-      <h1>{userList.length}</h1>
+      <ul>
+        {userList.map(user => <li>{user.name}</li>)}
+      </ul>
     </>
   );
 }

@@ -1,15 +1,9 @@
 import { createContext } from 'react';
-
-export type UserList = {
-  name: string;
-  cpf: string;
-  phone: string;
-  email: string;
-};
+import type { User } from '../../types';
 
 export type UserListContextData = {
-  userList: UserList[];
-  setList: (value: UserList[]) => void;
+  userList: User[];
+  setList: (value: User[]) => void;
 };
 
 export const UserListContext = createContext<UserListContextData>(
