@@ -1,12 +1,29 @@
 import type { HTMLInputTypeAttribute } from "react";
+import TextField from "@mui/material/TextField";
 
 type InputProps = {
-  type?: HTMLInputTypeAttribute 
+  type?: HTMLInputTypeAttribute; 
+  placeholder?: string;
+  onError?: boolean;
+  errorMessage?: string;
 }
 
-function Input({ type = "text" } : InputProps) {
+function Input({ 
+  type = "text", 
+  placeholder, 
+  onError, 
+  errorMessage, 
+  ...rest  
+} : InputProps) {
   return ( 
-    <input type={type} />
+    <TextField 
+      label={placeholder} 
+      variant="standard" 
+      type={type} 
+      error={onError}
+      helperText={errorMessage}
+      {...rest} 
+    />
   );
 }
 

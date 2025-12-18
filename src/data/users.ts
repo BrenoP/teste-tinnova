@@ -1,28 +1,18 @@
 import type { User } from "../types";
 
-export function getUserList(): User[] {
-  return [
-    {
-      name: "Joao da Silva",
-      cpf: "26899337649",
-      phone: "4233335555",
-      email: "joao@joaosilva.com.br"
-    },
-    {
-      name: "Maria Antonieta",
-      cpf: "65138896180",
-      phone: "1255553333",
-      email: "maria@mariaantonieta.com.br"
-    },
-    {
-      name: "Luiz Souza",
-      cpf: "32420496329",
-      phone: "1144446666",
-      email: "luiz@luizsouza.com.br"
-    },
-  ]
+export async function getUserList() {
+
+  const response = await fetch("https://private-9d65b3-tinnova.apiary-mock.com/users");
+
+  if (!response.ok) {
+    throw new Error("Erro ao buscar usuários");
+  }
+
+  return response.json();
 }
 
 export async function createUser(data: User) {
+  // Caso no futuro seja adicionada uma api de criaçao de usuário, o request vem aqui
+  await new Promise((resolve) => setTimeout(resolve, 500))
   console.log(data)
 }
