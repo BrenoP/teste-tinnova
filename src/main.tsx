@@ -4,11 +4,11 @@ import { createHashRouter, Navigate, RouterProvider } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import './style/global.css';
-import App from './App.tsx';
+import App from './App';
 
 import Register from "./pages/Register";
 import List from "./pages/List";
-import ToastProvider from './components/Toast/ToastProvider.tsx';
+import ToastProvider from './components/Toast/ToastProvider';
 
 const router = createHashRouter([
   {
