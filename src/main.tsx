@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { createHashRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, Navigate, RouterProvider } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import './style/global.css';
@@ -15,6 +15,10 @@ const router = createHashRouter([
     path: '/',
     element: <App />,
     children: [
+      {
+        index: true,
+        element: <Navigate to="/list" replace />,
+      },
       { path: 'list', element: <List /> },
       { path: 'register', element: <Register /> },
       { path: 'edit/:index', element: <Register edit /> },
