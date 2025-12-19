@@ -9,6 +9,7 @@ import { UserListProvider } from './contexts/UserList/index.ts'
 
 import Register from "./pages/Register"
 import List from "./pages/List"
+import ToastProvider from './components/Toast/ToastProvider.tsx'
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
       <UserListProvider>
+        <ToastProvider />
         <RouterProvider router={router} />
       </UserListProvider>
     </QueryClientProvider>

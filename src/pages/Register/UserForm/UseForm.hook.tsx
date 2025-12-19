@@ -2,6 +2,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { createUser } from "../../../data/users";
 import type { User } from "../../../types";
 import { saveUsersToStorage } from "../../../data/userStorage";
+import { showToast } from "../../../components/Toast";
 
 type CreateUserInput = Omit<User, 'id'>;
 
@@ -12,7 +13,7 @@ export function useCreateUser() {
     mutationFn: createUser,
     onSuccess(_, variables) {
       queryClient.setQueryData<User[]>(['users'], (data) => {
-        if (!data) return [];
+        if (!data) return []
 
         const updated = [...data,
           {
@@ -23,15 +24,20 @@ export function useCreateUser() {
           }
         ]
 
-        saveUsersToStorage(updated);
+        saveUsersToStorage(updated)
 
         return updated
+      });
+
+      showToast({
+        type: "success",
+        message: "Usuário cadastrado com sucesso!",
       });
     },
   });
 
   async function createUserAsync(data: CreateUserInput) {
-    return mutateAsync(data);
+    return mutateAsync(data)
   }
 
   return {

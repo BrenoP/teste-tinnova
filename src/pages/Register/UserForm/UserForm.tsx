@@ -8,23 +8,19 @@ import { ButtonContainer, Form } from "./UseForm.style";
 import Title from "../../../components/Title/Title";
 import Button from "../../../components/Button";
 import { Loader } from "../../../components/Button/Button.style";
-import { useEffect } from "react";
 
 function UserForm() {
-  const { register, handleSubmit, formState } = useForm<UserSchema>({
+  const { register, handleSubmit, formState, reset } = useForm<UserSchema>({
     resolver: zodResolver(userSchema),
   });
   const { errors } = formState;
 
   const { createUser, isPending } = useCreateUser();
 
-  useEffect(() => {
-    console.log(errors)
-  }, [errors])
-
   async function handleCreateUser(data: UserSchema) {
     try {
       await createUser(data);
+      reset()
     } catch (error) {
       console.error(error);
     }
