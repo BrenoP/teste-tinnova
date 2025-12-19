@@ -30,6 +30,9 @@ O projeto está disponível online e pode ser acessado pelo link:
 
 ## 🛠️ Principais Tecnologias Utilizadas
 
+### 🧠 Arquitetura
+Toda a estrutura do projeto foi construído pensando em escalabilidade, desde a organização de arquivos e pastas até as chamadas com TanStack React Query e configurações globais.
+
 ### ⚛️ React
 Biblioteca principal para construção da interface do usuário, permitindo a criação de componentes reutilizáveis e uma arquitetura baseada em estados e efeitos.
 
