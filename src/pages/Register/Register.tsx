@@ -14,7 +14,7 @@ function Register({ edit }: RegisterProps) {
     <>
       <Title>
         {edit && (
-          <Link to="/list"><FaArrowLeft style={{ cursor: "pointer" }} /></Link>
+          <Link to="/list"><FaArrowLeft className="pointer" /></Link>
         )}
         {edit ? "Edição de usuário" : "Registro de usuários"}
       </Title>

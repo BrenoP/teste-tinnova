@@ -2,13 +2,13 @@ import { render, screen } from "@testing-library/react";
 import Button from "./Button";
 
 describe("Button component", () => {
-  it("deve renderizar o texto passado como children", () => {
+  it("should render text passing as children", () => {
     render(<Button disabled={false}>Salvar</Button>);
 
     expect(screen.getByText("Salvar")).toBeInTheDocument();
   });
 
-  it("deve estar desabilitado quando a prop disabled for true", () => {
+  it("should be disabled when prop disabled is true", () => {
     render(<Button disabled={true}>Salvar</Button>);
 
     const button = screen.getByRole("button");
@@ -16,7 +16,7 @@ describe("Button component", () => {
     expect(button).toBeDisabled();
   });
 
-  it("deve estar habilitado quando a prop disabled for false", () => {
+  it("should be enabled when prop disabled is false", () => {
     render(<Button disabled={false}>Salvar</Button>);
 
     const button = screen.getByRole("button");
