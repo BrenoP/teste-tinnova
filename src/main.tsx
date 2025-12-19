@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import './style/global.css';
@@ -10,14 +10,14 @@ import Register from "./pages/Register";
 import List from "./pages/List";
 import ToastProvider from './components/Toast/ToastProvider.tsx';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: <App />,
     children: [
-      { path: '/list', element: <List /> },
-      { path: '/register', element: <Register /> },
-      { path: '/edit/:index', element: <Register edit /> },
+      { path: 'list', element: <List /> },
+      { path: 'register', element: <Register /> },
+      { path: 'edit/:index', element: <Register edit /> },
     ]
   }
 ]);
