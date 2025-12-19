@@ -16,7 +16,19 @@ export const Nav = styled.nav`
     padding: 2rem;
   }
 
-  li:hover {
-    color: ${colors.hover}
+  a {
+    text-decoration: none;
+    color: ${colors.white};
+    padding-bottom: 4px;
+
+    &:hover {
+      color: ${colors.hover}
+    }
+  }
+
+  a.active {
+    color: ${colors.button_disabled};
+    border-bottom: 2px solid ${colors.button_disabled};
+    font-weight: 600;
   }
 `;

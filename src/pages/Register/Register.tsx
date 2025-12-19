@@ -1,10 +1,24 @@
+import { Link } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
+
+import Title from "../../components/Title/Title";
 import UserForm from "./UserForm";
 
-function Register() {
+type RegisterProps = {
+  edit?: boolean;
+}
+
+function Register({ edit }: RegisterProps) {
 
   return (
     <>
-      <UserForm />
+      <Title>
+        {edit && (
+          <Link to="/list"><FaArrowLeft style={{ cursor: "pointer" }} /></Link>
+        )}
+        {edit ? "Edição de usuário" : "Registro de usuários"}
+      </Title>
+      <UserForm edit={edit} />
     </>
   );
 }

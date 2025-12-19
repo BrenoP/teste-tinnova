@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import colors from '../../style/colors';
 
 export const ButtonComponent = styled.button`
   width: 100%;
@@ -7,8 +8,8 @@ export const ButtonComponent = styled.button`
   border: none;
   border-radius: 999px;
 
-  background-color: #22c7b2;
-  color: #ffffff;
+  background-color: ${colors.button_primary};
+  color: ${colors.white};
 
   font-size: 18px;
   font-weight: 500;
@@ -26,8 +27,8 @@ export const ButtonComponent = styled.button`
   }
 
   &:disabled {
-    background-color: #f6f6f6;
-    color: #dddcdc;
+    background-color: ${colors.button_disabled};
+    color: ${colors.hover};
     cursor: not-allowed;
     opacity: 1;
   }
@@ -37,7 +38,7 @@ export const Loader = styled.span`
   width: 30px;
   height: 30px;
   border: 2px solid rgba(255, 255, 255, 0.4);
-  border-top-color: #ffffff;
+  border-top-color: ${colors.white};
   border-radius: 50%;
   animation: spin 0.6s linear infinite;
 
