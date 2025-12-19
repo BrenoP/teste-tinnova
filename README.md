@@ -101,7 +101,7 @@ Utilizada para inclusão de ícones de forma simples e consistente na interface.
 - `components/` → Componentes reutilizáveis (Navbar, Inputs, Toasts, etc.)
 - `data/` → Funções de acesso à API e localStorage
 - `style/` → Estilos globais e temas
-- `routes/` → Configuração das rotas
+- `types/` → Tipagens globais
 
 ---
 
