@@ -1,4 +1,4 @@
-# 📋 Cadastro de Usuários – React + Vite
+# 📋 Cadastro de Usuários – React
 
 Este projeto é uma aplicação front-end desenvolvida com **React** utilizando **Vite**, cujo objetivo é realizar o **cadastro, listagem, edição e exclusão de usuários**.
 
